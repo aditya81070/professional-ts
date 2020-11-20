@@ -10,7 +10,7 @@ export async function getAllTeams() {
 
 const cachedTeamRecords: Record<string, any> = {};
 
-export async function getTeamById(id) {
+export async function getTeamById(id: string) {
   let cached = cachedTeamRecords[id];
   if (typeof cached === 'undefined')
     cached = cachedTeamRecords[id] = apiCall(`teams/${id}`);
